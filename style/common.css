@@ -1,42 +1,81 @@
-
+/* General */
+* {
+    list-style: none;
+    text-decoration: none;
+}
 
 body {
     margin: 0;
     padding: 0;
 }
 
+
 /* Navigation Bar */
-
-.logo {
-    float: left;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
 .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #246EB9;
     width: 100%;
-    text-align: right;
 }
 
-.navbar ul {
+.logo {
+    margin-left: 20px;
+}
+
+.menu ul {
     display: inline-block;
-    vertical-align: top;
-    text-align: center;
+     
 }
 
-.navbar li {
+.nav-item {
     display: inline;
-    list-style-type: none;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
-.navbar li a{
+.nav-item a {
     color: #2D2E2E;
     font-size: 16px;
-    text-decoration: none;
+}
+
+.nav-item a:hover {
+    border-bottom: 2px solid #2D2E2E;
 }
 
 .active a {
     border-bottom: 2px solid #2D2E2E;
+}
+
+/* Navigation Bar - Hamburger Menu */
+input[type=checkbox] {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 22px;
+    margin-right: 20px;
+    user-select: none;
+}
+
+
+/* Navigation Bar Responsiveness */
+@media screen and (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        left: 0;
+        text-align: left;
+    }
+
+    input[type=checkbox]:checked~.menu {
+        padding-left: 20px;
+        display: grid;
+        background-color: #246EB9;
+    } 
 }

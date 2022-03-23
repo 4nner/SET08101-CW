@@ -9,28 +9,33 @@
     <!-- Includes -->
     <link rel="stylesheet" href="style/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    
     <!-- Website Info -->
     <title>QuizzON - Play</title>
 </head>
+
 <body>
+    <!-- Navigation Menu -->
     <nav class="navbar">
-        <img class="logo" src="img/logo.png" alt="QuizzON">
-        <div class="navbar-responsive">
-            <ul>
+        <img class="logo" href="index.html" src="img/logo.png" alt="QuizzON">
+        <ul>
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger"><i class="fa-solid fa-bars"></i></label>
+            <div class ="menu">
                 <li class="nav-item active">
-                    <a href="index.html"><i class="fa-solid fa-gamepad"></i></i> Play</a>
+                    <a href="index.html"><i class="fa-solid fa-gamepad"></i> Play</a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html"><i class="fa-solid fa-address-card"></i></i> About</a>
+                    <a href="about.html"><i class="fa-solid fa-address-card"></i> About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="leadeboard.html"><i class="fa-solid fa-trophy"></i></i> Leaderboad</a>
+                    <a href="leadeboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
                 </li>
-            </ul>
-        </div>
+            </div>
+        </ul>
     </nav>
 </body>
 </html>
