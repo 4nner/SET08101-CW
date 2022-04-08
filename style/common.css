@@ -4,9 +4,14 @@
     text-decoration: none;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     margin: 0;
     padding: 0;
+    transition: background-color 1s;
 }
 
 
@@ -15,7 +20,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #246EB9;
     width: 100%;
 }
 
@@ -25,7 +29,6 @@ body {
 
 .menu ul {
     display: inline-block;
-     
 }
 
 .nav-item {
@@ -33,17 +36,16 @@ body {
     margin-right: 10px;
 }
 
-.nav-item a {
-    color: #2D2E2E;
+.nav-item a, .toggle {
     font-size: 16px;
 }
 
 .nav-item a:hover {
-    border-bottom: 2px solid #2D2E2E;
+    border-bottom: 2px solid;
 }
 
 .active a {
-    border-bottom: 2px solid #2D2E2E;
+    border-bottom: 2px solid;
 }
 
 /* Navigation Bar - Hamburger Menu */
@@ -77,5 +79,7 @@ input[type=checkbox] {
         padding-left: 20px;
         display: grid;
         background-color: #246EB9;
-    } 
+    }
 }
+
+/* Dark Mode Switch */

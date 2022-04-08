@@ -1,0 +1,31 @@
+/* Light Theme (Default) */
+body {
+    --text-color: black;
+    background: white;
+}
+
+.navbar{
+    background-color: #246EB9;
+}
+
+.nav-item a, .toggle {
+    color: #2D2E2E;
+}
+
+.nav-item a:hover, .active a {
+    border-color: #2D2E2E;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --text-color: white;
+    background: #2D2E2E;
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+    body {
+        background: black;
+    }
+}
+*/
