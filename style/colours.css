@@ -22,10 +22,3 @@ body.dark-theme {
     background: #2D2E2E;
 }
 
-/*
-@media (prefers-color-scheme: dark) {
-    body {
-        background: black;
-    }
-}
-*/

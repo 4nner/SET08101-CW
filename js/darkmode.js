@@ -1,47 +1,43 @@
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-function loadTheme() {
-    var currentTheme = localStorage.getItem("theme");
-}
-
-if (currentTheme == "dark") {
-  document.body.classList.add("dark-theme");
-}
+const themeSwitch = document.getElementById("switch");
 
 // Execute on Page Load
-window.onload = loadTheme();
+window.onload = onLoad();
 
-// Toggle Icon Management
-function loadIcon() {
-    var themeSwitch = document.getElementById("switch");
-    if(prefersDark.matches) {
-        if (themeSwitch.className === "fa fa-moon toggle") {
-            themeSwitch.className = "fa fa-sun toggle";
+function onLoad(){
+    var currentTheme = localStorage.getItem("theme");
+    if (currentTheme === null) {
+        if(prefersDark.matches) {
+            setDark();
+        } else {
+            setLight();
+        }
+    } else {
+        if(currentTheme == "dark") {
+            setDark();
+        } else {
+            setLight();
         }
     }
 }
 
-function switchIcon() {
-    var themeSwitch = document.getElementById("switch");
-    if (themeSwitch.className === "fa fa-moon toggle") {
-        themeSwitch.className = "fa fa-sun toggle";
-    } else {
-        themeSwitch.className = "fa fa-moon toggle";
-    }
-}
-
-function test() {
-    alert('test from darkmode.js');
-}
-
 function switchTheme() {
-    switchIcon();
-    document.body.classList.toggle("dark-theme");
-    
-    let theme = "light";
-    if (document.body.classList.contains("dark-theme")) {
-        theme = "dark";
-    }
-    // Store choice
-    localStorage.setItem("theme", theme);
+    currentTheme = localStorage.getItem("theme");
+    if (currentTheme == "dark") {
+        setLight();
+    } else {
+        setDark();
+    }    
+}
+
+function setDark() {
+    localStorage.setItem("theme", "dark");
+    document.body.classList.add("dark-theme");
+    themeSwitch.className = "fa fa-sun toggle";
+}
+
+function setLight() {
+    localStorage.setItem("theme", "light");
+    document.body.classList.remove("dark-theme");
+    themeSwitch.className = "fa fa-moon toggle";
 }
