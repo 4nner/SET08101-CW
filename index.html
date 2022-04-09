@@ -13,29 +13,156 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
 
     <!-- Website Info -->
-    <title>QuizzON - Play</title>
+    <title>QuizzON - Home</title>
 </head>
 
 <body>
     <!-- Navigation Menu -->
     <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">QuizzON</label>
-        <ul>
-          <li><a href="index.html" class="active"><i class="fa-solid fa-gamepad"></i> Play</a></li>
-          <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
-          <li><a href="leadeboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
-          <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
-          <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i> Theme</a></li>
-        </ul>
-      </nav>
+      <label class="logo">QuizzON</label>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul class="mobile-menu">
+        <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="play.html"><i class="fa-solid fa-gamepad"></i> Play</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
+        <li><a href="leadeboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
+        <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+        <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i> Theme</a></li>
+      </ul>
+    </nav>
+    <!-- Quiz Builder -->
+    <div class="container flex-column">
+      <!-- Introduction -->
+      <div id="explaination" class="centered">
+        <h2>How does it work?</h2>
+        <p>QuizzON lets you play the quiz you want to play!<br>
+        Simply select the topic, the number of questions and the difficulty.<br>
+        Once done you need to click on "Let's Begin" to start playing your customised quiz!</p>
+      </div>
+      <!-- Topic -->
+      <div id="topic" class="centered">
+        <h3>Choose the Topic</h3>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">General Knowledge</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Books</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Movies</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Television</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Video Games</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Board Games</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Science</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Computers</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Mathematics</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Mythology</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Sports</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Geography</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">History</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Politics</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Arts</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Animals</a>
+        </div>
+      </div>
+      <!-- Question Number -->
+      <div id="number" class="centered">
+        <h3>Choose the Number of Questions</h3>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">10</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">20</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">30</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">40</a>
+        </div>
+      </div>
+      <!-- Difficulty -->
+      <div id="difficulty" class="centered">
+        <h3>Choose the Difficulty</h3>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Easy</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Medium</a>
+        </div>
+        <div class="button" id="choice">
+          <div id="circle"></div>
+          <a href="#">Hard</a>
+        </div>
+      </div>
+      <!-- Ready -->
+      <div id="ready" class="centered">
+        <h3>Are you Ready?</h3>
+        <div class="button" id="start">
+          <div id="dub-arrow"><img src="img/iconmonstr-arrow-48-240.png?raw=true"></div>
+          <a href="#">Let's Go!</a>
+        </div>
+      </div>
+    </div>
 
-    <h1>This is a heading.</h1>
+    <!-- Footer 
+    <footer class="site-footer">
+      <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+         <a href="#">Scanfcode</a>.
+      </p>
+    </footer>-->
 
-    
     <!-- Scripts -->
     <script src="js/common.js"></script>
     <script src="js/darkmode.js"></script>

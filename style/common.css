@@ -15,12 +15,34 @@ body {
   font-family: Poppins;
 }
 
+/* Typography */
+h2 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.6rem;
+  padding: 0 1rem 0 1rem;
+}
+
 /* Navigation Menu */
 /* Adapted from https://codepen.io/sayem-miaji/pen/poymaxE */
 
 nav {
+  display: flex;
+  justify-content: space-between;
   height: 8rem;
   width: 100%;
+}
+
+nav .mobile-menu {
+  z-index: 1;
 }
 
 label.logo {
@@ -31,7 +53,6 @@ label.logo {
 }
 
 nav ul {
-  float: right;
   margin-right: 2rem;
 }
 
@@ -49,16 +70,16 @@ nav ul li a {
 }
 
 a.active {
-  border-bottom: 2px solid;
+  border-bottom: 0.2rem solid;
 }
 
 a:hover {
+  cursor: pointer;
   transition: .5s;
 }
 
 .checkbtn {
   font-size: 3rem;
-  float: right;
   line-height: 8rem;
   margin-right: 4rem;
   cursor: pointer;
@@ -70,19 +91,7 @@ a:hover {
 }
 
 /* Navigation Menu - Mobile View */
-
-@media (max-width: 952px) {
-  label.logo {
-    font-size: 3rem;
-    padding-left: 5rem;
-  }
-
-  nav ul li a {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 858px) {
+@media (max-width: 1000px) {
   .checkbtn {
     display: block;
   }
@@ -91,7 +100,7 @@ a:hover {
     position: fixed;
     width: 100%;
     height: 100vh;
-    top: 80px;
+    top: 8rem;
     left: -100%;
     text-align: center;
     transition: all .5s;
@@ -99,12 +108,12 @@ a:hover {
 
   nav ul li {
     display: block;
-    margin: 50px 0;
-    line-height: 30px;
+    margin: 5rem 0;
+    line-height: 3rem;
   }
 
   nav ul li a {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   a:hover,a.active {
@@ -115,4 +124,132 @@ a:hover {
     left: 0;
   }
 }
-  
+
+/* Flexbox CSS */
+.vertical {
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Buttons */
+/* Buttons have been adapted from: https://codepen.io/atloomer/pen/JEaRWX */ 
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: .2rem solid;
+  margin: 1rem 1rem 1rem 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.button a {
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* Buttons: Choice Buttons */
+#choice {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#choice a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #BFC0C0;
+  position: absolute;
+  transition: all .5s ease-Out;
+  top: 20px;
+  left: 70px;
+}
+
+#choice:hover #circle {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  top: -70px;
+  left: -70px;
+}
+
+
+/* Buttons: Start Button */
+#start{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#start a {
+  position: relative;
+  left: 0;
+  transition: all .35s ease-Out;
+}
+
+#dub-arrow {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  position: absolute;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .35s ease-Out;
+  bottom: 0;
+}
+
+#start img {
+  width: 20px;
+  height: auto;
+}
+
+#start:hover #dub-arrow {
+  left: 0;
+}
+
+#start:hover a {
+  left: 150px;
+}
+
+/* Utilities */
+.centered {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,18 +1,19 @@
 /* Light Theme (Default) */
 body {
     color: #2D2E2E;
-    background: white;
+    background: #E1E6E1;
 }
 
-nav{
+nav {
     background-color: #246EB9;
 }
 
-label.logo, nav a {
+label.logo, nav a,
+a.active,
+.fa-bars,
+.button,
+.button a {
     color: #2D2E2E;
-}
-
-a.active {
     border-color: #2D2E2E;
 }
 
@@ -21,10 +22,18 @@ a:hover {
 }
   
 .checkbtn {
-    color: white;
+    color: #E1E6E1;
 }
-  
-@media (max-width: 858px) {
+
+#dub-arrow {
+    background: #BFC0C0;
+}
+
+#choice:hover a {
+    color: #2D2E2E;
+  }
+
+@media (max-width: 1000px) {
     ul {
       background: #246EB9;
     }
@@ -36,13 +45,16 @@ a:hover {
 
 /* Dark Theme */
 body.dark-theme {
-    color: white;
+    color: #E1E6E1;
     background: #2D2E2E;
 }
 
 body.dark-theme label.logo,
 body.dark-theme nav a,
-body.dark-theme a.active {
-    color: white;
-    border-color: white;
+body.dark-theme a.active,
+body.dark-theme .fa-bars,
+body.dark-theme .button,
+body.dark-theme .button a {
+    color: #E1E6E1;
+    border-color: #E1E6E1;
 }
