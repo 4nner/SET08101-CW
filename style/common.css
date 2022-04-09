@@ -1,100 +1,118 @@
 /* General */
 * {
-    list-style: none;
-    text-decoration: none;
-    font-family: Poppins;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  font-family: Poppins;
 }
 
+/* Navigation Menu */
+/* Adapted from https://codepen.io/sayem-miaji/pen/poymaxE */
 
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav {
+  height: 8rem;
+  width: 100%;
+}
+
+label.logo {
+  font-size: 3.5rem;
+  line-height: 8rem;
+  padding-left: 2rem;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 2rem;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 8rem;
+  margin: 0 .5em;
+}
+
+nav ul li a {
+  font-size: 1.7rem;
+  padding: .7rem 1.3rem;
+  border-radius: .3rem;
+  text-transform: uppercase;
+}
+
+a.active {
+  border-bottom: 2px solid;
+}
+
+a:hover {
+  transition: .5s;
+}
+
+.checkbtn {
+  font-size: 3rem;
+  float: right;
+  line-height: 8rem;
+  margin-right: 4rem;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* Navigation Menu - Mobile View */
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 3rem;
+    padding-left: 5rem;
+  }
+
+  nav ul li a {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
+    position: fixed;
     width: 100%;
+    height: 100vh;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  a:hover,a.active {
+    background: none;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
 }
-
-.logo {
-    margin-left: 20px;
-}
-
-.menu ul {
-    display: inline-block;
-}
-
-.nav-item {
-    display: inline;
-    margin-right: 10px;
-}
-
-.nav-item a, button {
-    font-size: 16px;
-}
-
-.nav-item a:hover {
-    border-bottom: 2px solid;
-}
-
-.active a {
-    border-bottom: 2px solid;
-}
-
-.nav-item button {
-    font-size: 16px;
-    text-decoration: none;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-}
-
-
-/* Navigation Bar - Hamburger Menu */
-input[type=checkbox] {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-    font-size: 22px;
-    margin-right: 20px;
-    user-select: none;
-}
-
-
-/* Navigation Bar Responsiveness */
-@media screen and (max-width: 600px) {
-    .hamburger {
-        display: block;
-    }
-
-    .menu {
-        display: none;
-        position: absolute;
-        right: 0;
-        left: 0;
-        text-align: left;
-        padding-top: 0.4em;
-    }
-    
-    .nav-item {
-        padding-top: 0.2em;
-    }
-
-    input[type=checkbox]:checked~.menu {
-        padding-left: 20px;
-        display: grid;
-        background-color: #246EB9;
-    }
-}
+  

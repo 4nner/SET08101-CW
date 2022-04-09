@@ -1,24 +1,48 @@
 /* Light Theme (Default) */
 body {
-    --text-color: black;
+    color: #2D2E2E;
     background: white;
 }
 
-.navbar{
+nav{
     background-color: #246EB9;
 }
 
-.nav-item a, button {
+label.logo, nav a {
     color: #2D2E2E;
 }
 
-.nav-item a:hover, .active a {
+a.active {
     border-color: #2D2E2E;
 }
 
+a:hover {
+    background: #1b9bff;
+}
+  
+.checkbtn {
+    color: white;
+}
+  
+@media (max-width: 858px) {
+    ul {
+      background: #246EB9;
+    }
+    a:hover {
+      color: #0082e6;
+    }
+  }
+
+
 /* Dark Theme */
 body.dark-theme {
-    --text-color: white;
+    color: white;
     background: #2D2E2E;
 }
 
+body.dark-theme label.logo,
+body.dark-theme nav a,
+body.dark-theme a.active {
+    color: white;
+    border-color: white;
+}
