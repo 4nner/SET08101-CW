@@ -1,0 +1,28 @@
+.answer {
+    display: flex;
+    width: 100%;
+    border: .2rem solid;
+    margin: 1rem 1rem;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
+}
+
+.answer:hover {
+    cursor: pointer;
+    transform: translateX(0.5rem);
+    transition: transform 300ms;
+}
+
+
+.answer-letter {
+    padding: 2rem 2.6rem;
+    border-right: .2rem solid;
+}
+
+.answer-text {
+    padding-left: 2rem;
+}

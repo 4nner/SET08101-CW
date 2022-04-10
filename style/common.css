@@ -11,11 +11,11 @@ html {
   font-size: 62.5%;
 }
 
+/* Typography */
 body {
-  font-family: Poppins;
+  font-family: "Courier New", Courier, monospace;
 }
 
-/* Typography */
 h2 {
   font-size: 5rem;
   font-weight: 800;
@@ -243,6 +243,14 @@ a:hover {
 #start:hover a {
   left: 150px;
 }
+
+/* Miscellaneous */
+.separator {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
+}
+
 
 /* Utilities */
 .centered {

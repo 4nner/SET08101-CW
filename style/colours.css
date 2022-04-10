@@ -4,7 +4,7 @@ body {
     background: #E1E6E1;
 }
 
-nav {
+nav, .answer-letter {
     background-color: #246EB9;
 }
 
