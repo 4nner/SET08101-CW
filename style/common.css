@@ -247,8 +247,7 @@ a:hover {
 /* Miscellaneous */
 .separator {
   border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
+  height: 2px; 
 }
 
 

@@ -4,7 +4,7 @@ body {
     background: #E1E6E1;
 }
 
-nav, .answer-letter {
+nav, .answer-number {
     background-color: #246EB9;
 }
 
@@ -25,7 +25,7 @@ nav a:hover {
     color: #E1E6E1;
 }
 
-#dub-arrow {
+#dub-arrow, #circle, .answer:hover {
     background: #BFC0C0;
 }
 
@@ -33,8 +33,8 @@ nav a:hover {
     color: #2D2E2E;
 }
 
-#circle {
-    background: #BFC0C0;
+.separator {
+    background-image: linear-gradient(to right, transparent, #2D2E2E, transparent); 
 }
 
 @media (max-width: 1000px) {
@@ -61,4 +61,12 @@ body.dark-theme .button,
 body.dark-theme .button a {
     color: #E1E6E1;
     border-color: #E1E6E1;
+}
+
+body.dark-theme .answer:hover .answer-text {
+    color: #2D2E2E;
+}
+
+body.dark-theme .separator {
+    background-image: linear-gradient(to right, transparent, #E1E6E1, transparent); 
 }

@@ -1,6 +1,9 @@
+h3 {
+    padding-top: 2rem;
+}
+
 .answer {
     display: flex;
-    width: 100%;
     border: .2rem solid;
     margin: 1rem 1rem;
     text-transform: uppercase;
@@ -17,8 +20,7 @@
     transition: transform 300ms;
 }
 
-
-.answer-letter {
+.answer-number {
     padding: 2rem 2.6rem;
     border-right: .2rem solid;
 }
