@@ -173,13 +173,13 @@ a:hover {
 }
 
 /* Buttons: Choice Buttons */
-#choice {
+.choice {
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
-#choice a {
+.choice a {
   position: relative;
   transition: all .45s ease-Out;
 }
@@ -190,14 +190,13 @@ a:hover {
   opacity: 0;
   line-height: 40px;
   border-radius: 50%;
-  background: #BFC0C0;
   position: absolute;
   transition: all .5s ease-Out;
   top: 20px;
   left: 70px;
 }
 
-#choice:hover #circle {
+.choice:hover #circle, .choice.selected #circle {
   width: 200%;
   height: 500%;
   opacity: 1;
