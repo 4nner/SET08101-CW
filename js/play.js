@@ -24,11 +24,11 @@ function play() {
 
 function loadQuestion(data) {
     /* Display Question & Answers */
-    question.innerText = data.question;
-    ans_one.innerText = data.correct_answer;
-    ans_two.innerText = data.incorrect_answers[0];
-    ans_three.innerText = data.incorrect_answers[1];
-    ans_four.innerText = data.incorrect_answers[2];
+    question.innerHTML = data.question;
+    ans_one.innerHTML = data.correct_answer;
+    ans_two.innerHTML = data.incorrect_answers[0];
+    ans_three.innerHTML = data.incorrect_answers[1];
+    ans_four.innerHTML = data.incorrect_answers[2];
 
     answered++;
 }
