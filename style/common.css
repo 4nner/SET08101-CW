@@ -167,7 +167,7 @@ a:hover {
   overflow: hidden;
 }
 
-.button a {
+.button span {
   text-decoration: none;
   letter-spacing: 1px;
 }
@@ -179,7 +179,7 @@ a:hover {
   cursor: pointer;
 }
 
-.choice a {
+.choice span {
   position: relative;
   transition: all .45s ease-Out;
 }

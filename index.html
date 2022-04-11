@@ -1,164 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Includes -->
-    <link rel="stylesheet" href="style/common.css">
-    <link rel="stylesheet" href="style/colours.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
+  <!-- Includes -->
+  <link rel="stylesheet" href="style/common.css">
+  <link rel="stylesheet" href="style/colours.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
 
-    <!-- Website Info -->
-    <title>QuizzON - Home</title>
+  <!-- Website Info -->
+  <title>QuizzON - Home</title>
 </head>
 
 <body>
-    <!-- Navigation Menu -->
-    <nav>
-      <label class="logo">QuizzON</label>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <ul class="mobile-menu">
-        <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
-        <li><a href="leadeboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
-        <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
-        <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i> Theme</a></li>
-      </ul>
-    </nav>
-    <!-- Quiz Builder -->
-    <div class="container flex-column">
-      <!-- Introduction -->
-      <div id="explaination" class="centered">
-        <h2>How does it work?</h2>
-        <p>QuizzON lets you play the quiz you want to play!<br>
+  <!-- Navigation Menu -->
+  <nav>
+    <label class="logo">QuizzON</label>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul class="mobile-menu">
+      <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
+      <li><a href="leadeboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
+      <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+      <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i> Theme</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Quiz Builder -->
+  <div class="container flex-column">
+    <!-- Introduction -->
+    <div id="explaination" class="centered">
+      <h2>How does it work?</h2>
+      <p>QuizzON lets you play the quiz you want to play!<br>
         Simply select the topic, the number of questions and the difficulty.<br>
         Once done you need to click on "Let's Begin" to start playing your customised quiz!</p>
-      </div>
-      <!-- Topic -->
-      <div id="topic" class="centered">
-        <h3>Choose the Topic</h3>
-        <div class="button choice" id="9">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('9')">General Knowledge</a>
-        </div>
-        <div class="button choice" id="11">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('11')">Movies</a>
-        </div>
-        <div class="button choice" id="12">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('12')">Music</a>
-        </div>
-        <div class="button choice" id="14">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('14')">Television</a>
-        </div>
-        <div class="button choice" id="15">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('15')">Video Games</a>
-        </div>
-        <div class="button choice" id="16">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('16')">Board Games</a>
-        </div>
-        <div class="button choice" id="17">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('17')">Science</a>
-        </div>
-        <div class="button choice" id="18">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('18')">Computers</a>
-        </div>
-        <div class="button choice" id="19">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('19')">Mathematics</a>
-        </div>
-        <div class="button choice" id="21">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('21')">Sports</a>
-        </div>
-        <div class="button choice" id="22">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('22')">Geography</a>
-        </div>
-        <div class="button choice" id="23">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('23')">History</a>
-        </div>
-        <div class="button choice" id="24">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('24')">Politics</a>
-        </div>
-        <div class="button choice" id="25">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('25')">Arts</a>
-        </div>
-        <div class="button choice" id="27">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('27')">Animals</a>
-        </div>
-        <div class="button choice" id="28">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setTopic('28')">Vehicle</a>
-        </div>
-      </div>
-      <!-- Question Number -->
-      <div id="number" class="centered">
-        <h3>Choose the Number of Questions</h3>
-        <div class="button choice" id="10">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setNumber('10')">10</a>
-        </div>
-        <div class="button choice" id="20">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setNumber('20')">20</a>
-        </div>
-        <div class="button choice" id="30">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setNumber('30')">30</a>
-        </div>
-        <div class="button choice" id="40">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setNumber('40')">40</a>
-        </div>
-      </div>
-      <!-- Difficulty -->
-      <div id="difficulty" class="centered">
-        <h3>Choose the Difficulty</h3>
-        <div class="button choice" id="easy">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setDifficulty('easy')">Easy</a>
-        </div>
-        <div class="button choice" id="medium">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setDifficulty('medium')">Medium</a>
-        </div>
-        <div class="button choice" id="hard">
-          <div id="circle"></div>
-          <a href="javascript:void(0);" onclick="setDifficulty('hard')">Hard</a>
-        </div>
-      </div>
-      <!-- Ready -->
+    </div>
+    <!-- Topic -->
+    <div id="topic" class="centered">
 
-      <!-- TODO: Make button "unclickable" or show alert if user did not select all the options -->
-      <div id="ready" class="centered">
-        <h3>Are you Ready?</h3>
-        <div class="button" id="start">
-          <div id="dub-arrow"><img src="img/iconmonstr-arrow-48-240.png?raw=true"></div>
-          <a href="#">Let's Go!</a>
-        </div>
+      <h3>Choose the Topic</h3>
+      <a href="javascript:void(0);" onclick="setTopic('9')" class="button choice" id="9">
+        <div id="circle"></div>
+        <span>General Knowledge</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('11')" class="button choice" id="11">
+        <div id="circle"></div>
+        <span>Movies</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('12')" class="button choice" id="12">
+        <div id="circle"></div>
+        <span>Music</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('14')" class="button choice" id="14">
+        <div id="circle"></div>
+        <span>Television</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('15')" class="button choice" id="15">
+        <div id="circle"></div>
+        <span>Video Gamesspana>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('16')" class="button choice" id="16">
+        <div id="circle"></div>
+        <span>Board Gamesspana>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('17')" class="button choice" id="17">
+        <div id="circle"></div>
+        <span>Science</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('18')" class="button choice" id="18">
+        <div id="circle"></div>
+        <span>Computers</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('19')" class="button choice" id="19">
+        <div id="circle"></div>
+        <span>Mathematics</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('21')" class="button choice" id="21">
+        <div id="circle"></div>
+        <span>Sports</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('22')" class="button choice" id="22">
+        <div id="circle"></div>
+        <span>Geography</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('23')" class="button choice" id="23">
+        <div id="circle"></div>
+        <span>History</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('24')" class="button choice" id="24">
+        <div id="circle"></div>
+        <span>Politics</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('25')" class="button choice" id="25">
+        <div id="circle"></div>
+        <span>Arts</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('27')" class="button choice" id="27">
+        <div id="circle"></div>
+        <span>Animals</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setTopic('28')" class="button choice" id="28">
+        <div id="circle"></div>
+        <span>Vehicle</span>
+      </a>
+    </div>
+    <!-- Question Number -->
+    <div id="number" class="centered">
+      <h3>Choose the Number of Questions</h3>
+      <a href="javascript:void(0);" onclick="setNumber('10')" class="button choice" id="10">
+        <div id="circle"></div>
+        <span>10</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setNumber('20')" class="button choice" id="20">
+        <div id="circle"></div>
+        <span>20</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setNumber('30')" class="button choice" id="30">
+        <div id="circle"></div>
+        <span>30</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setNumber('40')" class="button choice" id="40">
+        <div id="circle"></div>
+        <span>40</span>
+      </a>
+    </div>
+    <!-- Difficulty -->
+    <div id="difficulty" class="centered">
+      <h3>Choose the Difficulty</h3>
+      <a href="javascript:void(0);" onclick="setDifficulty('easy')" class="button choice" id="easy">
+        <div id="circle"></div>
+        <span>Easy</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setDifficulty('medium')" class="button choice" id="medium">
+        <div id="circle"></div>
+        <span>Medium</span>
+      </a>
+      <a href="javascript:void(0);" onclick="setDifficulty('hard')" class="button choice" id="hard">
+        <div id="circle"></div>
+        <span>Hard</span>
+      </a>
+    </div>
+    <!-- Ready -->
+
+    <!-- TODO: Make button "unclickable" or show alert if user did not select all the options -->
+    <div id="ready" class="centered">
+      <h3>Are you Ready?</h3>
+      <div class="button" id="start">
+        <div id="dub-arrow"><img src="img/iconmonstr-arrow-48-240.png?raw=true"></div>
+        <a href="#">Let's Go!</a>
       </div>
     </div>
+  </div>
 
-    <!-- Scripts -->
-    <script src="js/darkmode.js"></script>
-    <script src="js/builder.js"></script>
+  <!-- Scripts -->
+  <script src="js/darkmode.js"></script>
+  <script src="js/builder.js"></script>
 </body>
+
 </html>
