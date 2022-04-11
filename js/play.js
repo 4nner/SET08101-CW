@@ -10,40 +10,42 @@ let timeElapsed = 0;
 let toAnswer = [];
 
 const MAX_TIME = 600; // Seconds
-const MAX_QUESTION = 3; // For testing reason, otherwise: localStorage.getItem("number");
+const MAX_QUESTIONS = 3; // For testing reason, otherwise: localStorage.getItem("number");
 
-let questions = getQuestions("sample.json");
-console.log(questions);
 
 function play() {
     /* Set previous values to 0 */
     score = 0;
     answered = 0;
     timeElapsed = 0;
-    loadQuestion();
+
+    start("sample.json");
 }
 
-function loadQuestion() {
+function loadQuestion(data) {
     /* Display Question & Answers */
-    question.innerText = questions[answered].question;
-    ans_one.innerText = questions[answered].correct_answer;
-    ans_two.innerText = questions[answered].incorrect_answers[0];
-    ans_three.innerText = questions[answered].incorrect_answers[1];
-    ans_four.innerText = questions[answered].incorrect_answers[2];
+    question.innerText = data.question;
+    ans_one.innerText = data.correct_answer;
+    ans_two.innerText = data.incorrect_answers[0];
+    ans_three.innerText = data.incorrect_answers[1];
+    ans_four.innerText = data.incorrect_answers[2];
 
     answered++;
 }
 
 /* Fetch from TriviaDB */
-function getQuestions(api_url) {
-    const data = fetch(api_url)
+function start(api_url) {
+    fetch(api_url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
+            loadQuestion(data.results[answered]);
             return data.results;
+        })
+        .catch(error => {
+            console.log(error);
         });
-    return data;
 }
 
 play();
