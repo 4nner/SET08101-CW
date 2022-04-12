@@ -1,13 +1,14 @@
 /* HTML Elements */
 const question = document.getElementById("question");
 const answer = Array.from(document.getElementsByClassName("answer-text"));
+const progress_bar = document.getElementById("progress-bar");
 
 /* Sounds */
 const correctSound = new Audio("sound/right.wav");
 const wrongSound = new Audio("sound/wrong.wav");
 
 /* Game Settings */
-const MAX_TIME = 10; // In seconds - For For testing reason, otherwise based on difficulty
+const MAX_TIME = 9999; // In seconds - For For testing reason, otherwise based on difficulty
 const MAX_QUESTIONS = 5; // For testing reason, otherwise: localStorage.getItem("number");
 
 /* Game Vars */
@@ -19,6 +20,7 @@ let notAnswered = 0;
 let questCount = 0;
 let timeElapsed = 0;
 let timeLeft = 0;
+let progress = 0;
 let answerAllowed = false;
 let difficulty;
 let timer;
@@ -37,6 +39,7 @@ async function play() {
     notAnswered = 0;
     questCount = 0;
     timeElapsed = 0;
+    progress = 0;
 
     questions = await getQuestions("sample.json");
     setDifficulty();
@@ -47,6 +50,7 @@ async function play() {
 
 /* Handles Next Question */
 function nextQuestion() {
+    updateProgress();
     clearInterval(timer);
     if (questCount < MAX_QUESTIONS) {
         timeLeft = MAX_TIME;
@@ -83,7 +87,7 @@ function answerListener() {
                 e.target.parentElement.classList.add(result);
                 wrongSound.play();
             }
-            setTimeout(function(){
+            setTimeout(function () {
                 e.target.parentElement.classList.remove(result);
                 nextQuestion();
             }, 1000); // Wait 1 second
@@ -129,21 +133,38 @@ function loadQuestion() {
 
 /* Timer - Score - Progress */
 function questionTimer() {
-    document.getElementById("time").innerHTML = " " + timeLeft +"s";
+    document.getElementById("time").innerHTML = " " + timeLeft + "s";
     timeLeft--;
     timeElapsed++;
 
-    if(timeLeft == -1) {
+    if (timeLeft == -1) {
         clearInterval(timer);
+        wrongSound.play();
         notAnswered++;
         nextQuestion();
     }
 }
 
 function updateScore() {
-    console.log(timeLeft);
     score += (10 + timeLeft) * difficulty;
     document.getElementById("score").innerHTML = "" + score;
+}
+
+function updateProgress() {
+    progress = (questCount / MAX_QUESTIONS) * 100;
+
+    progress_bar.style.width = progress + "%";
+    if (progress >= 95) {
+        progress_bar.style.backgroundColor = "#86e01e";
+    } else if (progress >= 75) {
+        progress_bar.style.backgroundColor = "#f2d31b";
+    } else if (progress >= 50) {
+        progress_bar.style.backgroundColor = "#f2b01e";
+    } else if (progress >= 25) {
+        progress_bar.style.backgroundColor = "#f27011";
+    } else {
+        progress_bar.style.backgroundColor = "#8f63a0f";
+    }
 }
 
 
@@ -166,9 +187,9 @@ function shuffleArray(arr) {
 function setDifficulty() {
     // let level = localstorage.getItem("difficulty");
     let level = "easy"; // TODO: Remove before final release
-    if(level == "easy") difficulty = 1;
-    if(level == "medium") difficulty = 2;
-    if(level == "hard") difficulty = 3;
+    if (level == "easy") difficulty = 1;
+    if (level == "medium") difficulty = 2;
+    if (level == "hard") difficulty = 3;
 }
 
 /* Run Game */

@@ -1,19 +1,22 @@
+/* Typography */
 h4 {
     font-size: 3rem;
     font-weight: 500;
     padding-top: 2rem;
 }
 
+/* Info Panel & Progress Bar */
 .info {
     display: flex;
+    margin: 1rem 1rem;
     flex-direction: row;
 }
 
-.info > span {
+.info>span {
     flex-grow: 1;
 }
 
-.info > .info-item {
+.info>.info-item {
     flex-grow: 0;
 }
 
@@ -22,6 +25,61 @@ h4 {
     margin: .5rem;
 }
 
+.progress {
+    padding: 4px;
+    margin: 1rem 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+    height: 16px;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    -webkit-transition: 0.4s linear;
+    -moz-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
+    transition: 0.4s linear;
+    -webkit-transition-property: width, background-color;
+    -moz-transition-property: width, background-color;
+    -o-transition-property: width, background-color;
+    transition-property: width, background-color;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.progress>.progress-bar {
+    width: 5%;
+    background-color: #f63a0f;
+}
+
+#twentyfive .progress>.progress-bar {
+    width: 25%;
+    background-color: #f27011;
+}
+
+#fifty:checked~.progress>.progress-bar {
+    width: 50%;
+    background-color: #f2b01e;
+}
+
+#seventyfive:checked~.progress>.progress-bar {
+    width: 75%;
+    background-color: #f2d31b;
+}
+
+#onehundred:checked~.progress>.progress-bar {
+    width: 100%;
+    background-color: #86e01e;
+}
+
+
+/* Answers */
 .answer {
     display: flex;
     border: .2rem solid;
@@ -29,7 +87,7 @@ h4 {
     text-transform: uppercase;
     font-size: 1.6rem;
     letter-spacing: 1.5px;
-    align-items: center;
+    align-items: stretch;
     justify-content: left;
     overflow: hidden;
 }
