@@ -116,11 +116,12 @@ a:hover {
     font-size: 2rem;
   }
 
-  a:hover,a.active {
+  a:hover,
+  a.active {
     background: none;
   }
 
-  #check:checked ~ ul {
+  #check:checked~ul {
     left: 0;
   }
 }
@@ -151,7 +152,7 @@ a:hover {
 
 
 /* Buttons */
-/* Buttons have been adapted from: https://codepen.io/atloomer/pen/JEaRWX */ 
+/* Buttons have been adapted from: https://codepen.io/atloomer/pen/JEaRWX */
 .button {
   display: inline-flex;
   height: 40px;
@@ -196,7 +197,8 @@ a:hover {
   left: 70px;
 }
 
-.choice:hover #circle, .choice.selected #circle {
+.choice:hover #circle,
+.choice.selected #circle {
   width: 200%;
   height: 500%;
   opacity: 1;
@@ -206,7 +208,7 @@ a:hover {
 
 
 /* Buttons: Start Button */
-#start{
+#start {
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -247,7 +249,7 @@ a:hover {
 /* Miscellaneous */
 .separator {
   border: 0;
-  height: 2px; 
+  height: 2px;
 }
 
 

@@ -4,11 +4,13 @@ body {
     background: #E1E6E1;
 }
 
-nav, .answer-number {
+nav,
+.answer-number {
     background-color: #246EB9;
 }
 
-label.logo, nav a,
+label.logo,
+nav a,
 a.active,
 .fa-bars,
 .button,
@@ -20,12 +22,13 @@ a.active,
 nav a:hover {
     background: #1b9bff;
 }
-  
+
 .checkbtn {
     color: #E1E6E1;
 }
 
-#dub-arrow, #circle, .answer:hover {
+#dub-arrow,
+#circle{
     background: #BFC0C0;
 }
 
@@ -34,17 +37,26 @@ nav a:hover {
 }
 
 .separator {
-    background-image: linear-gradient(to right, transparent, #2D2E2E, transparent); 
+    background-image: linear-gradient(to right, transparent, #2D2E2E, transparent);
+}
+
+.correct {
+    background: #4CB944;
+}
+
+.wrong {
+    background: #D74E09;
 }
 
 @media (max-width: 1000px) {
     ul {
-      background: #246EB9;
+        background: #246EB9;
     }
+
     a:hover {
-      color: #0082e6;
+        color: #0082e6;
     }
-  }
+}
 
 
 /* Dark Theme */
@@ -63,10 +75,6 @@ body.dark-theme .button a {
     border-color: #E1E6E1;
 }
 
-body.dark-theme .answer:hover .answer-text {
-    color: #2D2E2E;
-}
-
 body.dark-theme .separator {
-    background-image: linear-gradient(to right, transparent, #E1E6E1, transparent); 
+    background-image: linear-gradient(to right, transparent, #E1E6E1, transparent);
 }

@@ -59,14 +59,22 @@ function answerListener() {
             if (!answerAllowed) return;
             answerAllowed = false;
 
+            let result = "correct";
             if (questions[questCount - 1].correct_answer == e.target.innerHTML) {
                 answerRegistration(true);
+                e.target.parentElement.classList.add(result);
                 correctSound.play();
             } else {
+                result = "wrong";
                 answerRegistration(false);
+                e.target.parentElement.classList.add(result);
                 wrongSound.play();
             }
-            nextQuestion();
+
+            setTimeout(function(){
+                e.target.parentElement.classList.remove(result);
+                nextQuestion();
+            }, 1000); // Wait 1 second
         });
     });
 }
