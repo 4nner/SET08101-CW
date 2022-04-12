@@ -20,6 +20,7 @@ let questCount = 0;
 let timeElapsed = 0;
 let timeLeft = 0;
 let answerAllowed = false;
+let difficulty;
 let timer;
 
 
@@ -38,6 +39,8 @@ async function play() {
     timeElapsed = 0;
 
     questions = await getQuestions("sample.json");
+    setDifficulty();
+
     nextQuestion();
     answerListener();
 }
@@ -49,11 +52,13 @@ function nextQuestion() {
         timeLeft = MAX_TIME;
         loadQuestion();
     } else {
+        console.log(score);
         console.log(questCount);
         console.log(answered);
         console.log(notAnswered);
         console.log(correctAnswer);
         console.log(wrongAnswer);
+        console.log(timeElapsed);
         console.log('all questions answered')
         // end();
     }
@@ -68,6 +73,7 @@ function answerListener() {
 
             let result = "correct";
             if (questions[questCount - 1].correct_answer == e.target.innerHTML) {
+                updateScore();
                 answerRegistration(true);
                 e.target.parentElement.classList.add(result);
                 correctSound.play();
@@ -134,6 +140,12 @@ function questionTimer() {
     }
 }
 
+function updateScore() {
+    console.log(timeLeft);
+    score += (10 + timeLeft) * difficulty;
+    document.getElementById("score").innerHTML = "" + score;
+}
+
 
 /* Fetch from TriviaDB */
 async function getQuestions(api_url) {
@@ -149,6 +161,14 @@ async function getQuestions(api_url) {
 /* Utilities */
 function shuffleArray(arr) {
     arr.sort(() => Math.random() - 0.5);
+}
+
+function setDifficulty() {
+    // let level = localstorage.getItem("difficulty");
+    let level = "easy"; // TODO: Remove before final release
+    if(level == "easy") difficulty = 1;
+    if(level == "medium") difficulty = 2;
+    if(level == "hard") difficulty = 3;
 }
 
 /* Run Game */
