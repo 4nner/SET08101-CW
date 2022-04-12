@@ -1,50 +1,103 @@
 const question = document.getElementById("question");
-const answer = [document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
+const answer = Array.from(document.getElementsByClassName("answer-text"));
 
+/* Game Vars */
 let score = 0;
 let answered = 0;
+let wrongAnswer = 0;
+let correctAnswer = 0;
+let notAnswered = 0;
+let questCount = 0;
 let timeElapsed = 0;
 let toAnswer = [];
+let answerAllowed = false;
 
 const MAX_TIME = 600; // Seconds
-const MAX_QUESTIONS = 3; // For testing reason, otherwise: localStorage.getItem("number");
+const MAX_QUESTIONS = 5; // For testing reason, otherwise: localStorage.getItem("number");
 
-let example_array = [];
+let questions = []; // Contains all questions and answers
 
-
-
+/* Game Initialisation */
 async function play() {
-    /* Set previous values to 0 */
+    /* Set all the variables to 0 */
     score = 0;
     answered = 0;
+    wrongAnswer = 0;
+    correctAnswer = 0;
+    notAnswered = 0;
+    questCount = 0;
     timeElapsed = 0;
 
-    example_array = await getQuestions("sample.json");
-    console.log(example_array);
-    loadQuestion(example_array);
+    questions = await getQuestions("sample.json");
+    loadQuestion();
+    answerListener();
 }
 
-function loadQuestion(array) {
-    data = array[answered];
-    /* Display Question & Answers */
+/* Handles Next Question */
+function nextQuestion() {
+    if (questCount < MAX_QUESTIONS) {
+        loadQuestion();
+    } else {
+        console.log(questCount);
+        console.log(answered);
+        console.log(correctAnswer);
+        console.log(wrongAnswer);
+        console.log('all questions answered')
+        // end();
+    }
+}
+
+/* Set-up Answer Listener*/
+function answerListener() {
+    answer.forEach((pick) => {
+        pick.addEventListener('click', e => {
+            if (!answerAllowed) return;
+            answerAllowed = false;
+
+            if (questions[questCount - 1].correct_answer == e.target.innerHTML) {
+                answerRegistration(true);
+            } else {
+                answerRegistration(false);
+            }
+            nextQuestion();
+        });
+    });
+}
+
+/* Registers Answer */
+function answerRegistration(correct) {
+    answered++;
+    if (correct) {
+        console.log('correct');
+        correctAnswer++;
+    } else {
+        wrongAnswer++;
+    }
+}
+
+
+/* Loads Question Data*/
+function loadQuestion() {
+    data = questions[questCount];
     question.innerHTML = data.question;
     /* Randomise Questions Order */
     let answers = [];
     answers.push(data.correct_answer);
 
-    for(let loop = 0; loop < 3; loop++) {
+    for (let loop = 0; loop < 3; loop++) {
         answers.push(data.incorrect_answers[loop]);
     }
 
     shuffleArray(answers);
 
-
-    for(let loop = 0; loop < 4; loop++) {
+    for (let loop = 0; loop < 4; loop++) {
         answer[loop].innerHTML = answers[loop];
     }
 
-    answered++;
+    questCount++;
+    answerAllowed = true;
 }
+
 
 /* Fetch from TriviaDB */
 async function getQuestions(api_url) {
@@ -52,7 +105,7 @@ async function getQuestions(api_url) {
         const data = await fetch(api_url);
         const json = await data.json();
         return json.results;
-    } catch(err) {
+    } catch (err) {
         console.log(err);
     }
 }

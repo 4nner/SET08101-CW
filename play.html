@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
@@ -10,7 +11,9 @@
     <link rel="stylesheet" href="style/common.css">
     <link rel="stylesheet" href="style/play.css">
     <link rel="stylesheet" href="style/colours.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
 
     <!-- Website Info -->
@@ -30,29 +33,32 @@
             <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
             <li><a href="leadeboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
             <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
-            <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i> Theme</a></li>
+            <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i>
+                    Theme</a></li>
         </ul>
     </nav>
-    
+
     <div class="container flex-column">
         <div id="play">
-            <h3 class="centered" id="question">Question placeholder?</h3>
+            <h4 class="centered" id="question">Question placeholder?</h4>
+            <hr class="separator">
+            <!-- TODO: Add Timer, progress bar and score here -->
             <hr class="separator">
             <div class="answer">
                 <p class="answer-number">1</p>
-                <p class="answer-text" id="1">Answer A Placeholder</p>
+                <p class="answer-text">Answer A Placeholder</p>
             </div>
             <div class="answer">
                 <p class="answer-number">2</p>
-                <p class="answer-text" id="2">Answer B Placeholder</p>
+                <p class="answer-text">Answer B Placeholder</p>
             </div>
             <div class="answer">
                 <p class="answer-number">3</p>
-                <p class="answer-text" id="3">Answer C Placeholder</p>
+                <p class="answer-text">Answer C Placeholder</p>
             </div>
             <div class="answer">
                 <p class="answer-number">4</p>
-                <p class="answer-text" id="4">Answer D Placeholder</p>
+                <p class="answer-text">Answer D Placeholder</p>
             </div>
         </div>
     </div>
@@ -61,4 +67,5 @@
     <script src="js/play.js"></script>
     <script src="js/darkmode.js"></script>
 </body>
+
 </html>
