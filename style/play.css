@@ -4,6 +4,24 @@ h4 {
     padding-top: 2rem;
 }
 
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.info > span {
+    flex-grow: 1;
+}
+
+.info > .info-item {
+    flex-grow: 0;
+}
+
+.info-item {
+    font-size: 2.5rem;
+    margin: .5rem;
+}
+
 .answer {
     display: flex;
     border: .2rem solid;
@@ -29,4 +47,5 @@ h4 {
 
 .answer-text {
     padding-left: 2rem;
+    width: 100%;
 }

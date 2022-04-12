@@ -6,6 +6,10 @@ const answer = Array.from(document.getElementsByClassName("answer-text"));
 const correctSound = new Audio("sound/right.wav");
 const wrongSound = new Audio("sound/wrong.wav");
 
+/* Game Settings */
+const MAX_TIME = 10; // In seconds - For For testing reason, otherwise based on difficulty
+const MAX_QUESTIONS = 5; // For testing reason, otherwise: localStorage.getItem("number");
+
 /* Game Vars */
 let score = 0;
 let answered = 0;
@@ -14,11 +18,11 @@ let correctAnswer = 0;
 let notAnswered = 0;
 let questCount = 0;
 let timeElapsed = 0;
-let toAnswer = [];
+let timeLeft = 0;
 let answerAllowed = false;
+let timer;
 
-const MAX_TIME = 600; // Seconds
-const MAX_QUESTIONS = 5; // For testing reason, otherwise: localStorage.getItem("number");
+
 
 let questions = []; // Contains all questions and answers
 
@@ -34,17 +38,20 @@ async function play() {
     timeElapsed = 0;
 
     questions = await getQuestions("sample.json");
-    loadQuestion();
+    nextQuestion();
     answerListener();
 }
 
 /* Handles Next Question */
 function nextQuestion() {
+    clearInterval(timer);
     if (questCount < MAX_QUESTIONS) {
+        timeLeft = MAX_TIME;
         loadQuestion();
     } else {
         console.log(questCount);
         console.log(answered);
+        console.log(notAnswered);
         console.log(correctAnswer);
         console.log(wrongAnswer);
         console.log('all questions answered')
@@ -70,7 +77,6 @@ function answerListener() {
                 e.target.parentElement.classList.add(result);
                 wrongSound.play();
             }
-
             setTimeout(function(){
                 e.target.parentElement.classList.remove(result);
                 nextQuestion();
@@ -89,7 +95,6 @@ function answerRegistration(correct) {
         wrongAnswer++;
     }
 }
-
 
 /* Loads Question Data*/
 function loadQuestion() {
@@ -111,6 +116,22 @@ function loadQuestion() {
 
     questCount++;
     answerAllowed = true;
+
+    /* (Re)Start Timer */
+    timer = setInterval(questionTimer, 1000);
+}
+
+/* Timer - Score - Progress */
+function questionTimer() {
+    document.getElementById("time").innerHTML = " " + timeLeft +"s";
+    timeLeft--;
+    timeElapsed++;
+
+    if(timeLeft == -1) {
+        clearInterval(timer);
+        notAnswered++;
+        nextQuestion();
+    }
 }
 
 
@@ -125,12 +146,10 @@ async function getQuestions(api_url) {
     }
 }
 
-
 /* Utilities */
 function shuffleArray(arr) {
     arr.sort(() => Math.random() - 0.5);
 }
-
 
 /* Run Game */
 play();
