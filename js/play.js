@@ -1,5 +1,10 @@
+/* HTML Elements */
 const question = document.getElementById("question");
 const answer = Array.from(document.getElementsByClassName("answer-text"));
+
+/* Sounds */
+const correctSound = new Audio("sound/right.wav");
+const wrongSound = new Audio("sound/wrong.wav");
 
 /* Game Vars */
 let score = 0;
@@ -56,8 +61,10 @@ function answerListener() {
 
             if (questions[questCount - 1].correct_answer == e.target.innerHTML) {
                 answerRegistration(true);
+                correctSound.play();
             } else {
                 answerRegistration(false);
+                wrongSound.play();
             }
             nextQuestion();
         });
