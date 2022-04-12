@@ -162,8 +162,6 @@ function updateProgress() {
         progress_bar.style.backgroundColor = "#f2b01e";
     } else if (progress >= 25) {
         progress_bar.style.backgroundColor = "#f27011";
-    } else {
-        progress_bar.style.backgroundColor = "#8f63a0f";
     }
 }
 
