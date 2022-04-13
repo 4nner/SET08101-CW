@@ -42,7 +42,7 @@
       <h2>How does it work?</h2>
       <p class="introduction">QuizzON lets you play the quiz you want to play!<br>
         Simply select the topic, the number of questions and the difficulty.<br>
-        Once done you need to click on "Let's Begin" to start playing your customised quiz!</p>
+        Once done you need to click on "Let's Go" to start playing your customised quiz!</p>
     </div>
     <!-- Topic -->
     <div id="topic" class="centered">
@@ -150,14 +150,12 @@
       </a>
     </div>
     <!-- Ready -->
-
-    <!-- TODO: Make button "unclickable" or show alert if user did not select all the options -->
     <div id="ready" class="centered">
       <h3>Are you Ready?</h3>
-      <div class="button" id="start">
+      <a href="javascript:void(0);" onclick="build()" class="button" id="start">
         <div id="dub-arrow"><img src="img/iconmonstr-arrow-48-240.png?raw=true"></div>
-        <a href="#">Let's Go!</a>
-      </div>
+        <span>Let's Go!</span>
+      </a>
     </div>
   </div>
 

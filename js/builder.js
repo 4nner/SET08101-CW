@@ -1,5 +1,8 @@
 window.onload = resetChoices();
 
+/* HTML Elements */
+const go = document.getElementById("start"); 
+
 /* Buttons Elements */
 const topics = ["9", "11", "12", "14", "15", "16", "17", "18", "19", "21", "22", "23", "24", "25", "27", "28"];
 const numbers = ["10", "20", "30", "40"];
@@ -57,4 +60,19 @@ function setDifficulty(difficulty) {
     }
 
     localStorage.setItem("difficulty", difficulty);
+}
+
+function build() {
+    let topic = localStorage.getItem("topic");
+    let difficulty = localStorage.getItem("difficulty");
+    let number = localStorage.getItem("number");
+
+    if (topic === "undefined" || difficulty == "undefined" || number === "undefined") {
+        go.classList.add("incomplete");
+        setTimeout(function () {
+            go.classList.remove("incomplete");
+        }, 2000); // Wait 2 seconds
+    } else {
+        return window.location.assign("/play.html");
+    }
 }
