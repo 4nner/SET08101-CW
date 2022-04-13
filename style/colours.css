@@ -1,5 +1,6 @@
 /* Light Theme (Default) */
-body {
+body,
+.input-box {
     color: #2D2E2E;
     background: #E1E6E1;
 }
@@ -28,7 +29,7 @@ nav a:hover {
 }
 
 #dub-arrow,
-#circle{
+#circle {
     background: #BFC0C0;
 }
 
@@ -81,6 +82,19 @@ nav a:hover {
     }
 }
 
+/* Leaderboards */
+.fa-1 {
+    color: #FFD700;
+}
+
+.fa-2 {
+    color: #C0C0C0;
+}
+
+.fa-3 {
+    color: #CD7F32;
+}
+
 
 /* Dark Theme */
 body.dark-theme {
@@ -100,4 +114,9 @@ body.dark-theme .button a {
 
 body.dark-theme .separator {
     background-image: linear-gradient(to right, transparent, #E1E6E1, transparent);
+}
+
+body.dark-theme .input-box {
+    color: #E1E6E1;
+    background: #2D2E2E;
 }

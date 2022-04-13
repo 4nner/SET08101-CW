@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Includes -->
+  <link rel="stylesheet" href="style/common.css">
+  <link rel="stylesheet" href="style/colours.css">
+  <link rel="stylesheet" href="style/stats.css">
+  <link rel="stylesheet" href="style/leaderboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Website Info -->
+  <title>QuizzON - About</title>
+</head>
+
+<body>
+  <!-- Navigation Menu -->
+  <nav>
+    <label class="logo">QuizzON</label>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul class="mobile-menu">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
+      <li><a href="leaderboard.html" class="active"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
+      <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+      <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i> Theme</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container flex-column">
+    <h3>Leaderboard</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="center"><i class="fa-solid fa-trophy"></i></th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover">
+                <tr>
+                    <td class="center"><i class="fa-solid fa-1"></i></td>
+                    <td id="first-user">Not Available</td>
+                    <td id="first-score">N/A</td>
+                </tr>
+                <tr>
+                    <td class="center"><i class="fa-solid fa-2"></i></td>
+                    <td id="second-user">Not Available</td>
+                    <td id="second-score">N/A</td>
+                </tr>
+                <tr>
+                    <td class="center"><i class="fa-solid fa-3"></i></td>
+                    <td id="third-user">Not Available</td>
+                    <td id="third-score">N/A</td>
+                </tr>
+            </tbody>
+        </table>
+  </div>
+  <!-- Scripts -->
+  <script src="js/darkmode.js"></script>
+  <script src="js/leaderboard.js"></script>
+</html>

@@ -30,7 +30,7 @@
         <ul class="mobile-menu">
             <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
-            <li><a href="leadeboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
+            <li><a href="leaderboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
             <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
             <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i>
                     Theme</a></li>
@@ -38,6 +38,7 @@
     </nav>
 
     <div class="container flex-column">
+        <!-- Statistics Table -->
         <h3>Quiz Statistics</h3>
         <table class="table">
             <thead>
@@ -81,6 +82,29 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- Play Again -->
+        <div class="again centered">
+            <a href="/play.html" class="button choice" id="9">
+                <div id="circle"></div>
+                <span>Play Again</span>
+            </a>
+            <a href="/index.html" class="button choice" id="11">
+                <div id="circle"></div>
+                <span>Build New Quiz</span>
+            </a>
+        </div>
+
+        <!-- Save Score -->
+        <div class="save-score centered">
+            <form>
+                <input type="text" id="username" name="username" class="button input-box" placeholder="Enter Username">
+                <a href="javascript:void(0);" onclick="saveScore()" class="button choice" id="11">
+                    <div id="circle"></div>
+                    <span>Save Score</span>
+                </a>
+            </form>
+        </div>
     </div>
 
     <!-- Scripts -->
