@@ -8,8 +8,8 @@ const correctSound = new Audio("sound/right.wav");
 const wrongSound = new Audio("sound/wrong.wav");
 
 /* Game Settings */
-const MAX_TIME = 9999; // In seconds - For For testing reason, otherwise based on difficulty
-const MAX_QUESTIONS = 5; // For testing reason, otherwise: localStorage.getItem("number");
+const MAX_TIME = 45; // In seconds - For For testing reason, otherwise based on difficulty
+const MAX_QUESTIONS = 10; // For testing reason, otherwise: localStorage.getItem("number");
 
 /* Game Vars */
 let score = 0;
@@ -56,15 +56,14 @@ function nextQuestion() {
         timeLeft = MAX_TIME;
         loadQuestion();
     } else {
-        console.log(score);
-        console.log(questCount);
-        console.log(answered);
-        console.log(notAnswered);
-        console.log(correctAnswer);
-        console.log(wrongAnswer);
-        console.log(timeElapsed);
-        console.log('all questions answered')
-        // end();
+        localStorage.setItem("score", score);
+        localStorage.setItem("total", questCount);
+        localStorage.setItem("answered", answered);
+        localStorage.setItem("not-answered", notAnswered);
+        localStorage.setItem("correct", correctAnswer);
+        localStorage.setItem("incorrect", wrongAnswer);
+        localStorage.setItem("time", timeElapsed);
+        return window.location.assign("/stats.html");
     }
 }
 
