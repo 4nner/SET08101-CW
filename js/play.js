@@ -2,6 +2,8 @@
 const question = document.getElementById("question");
 const answer = Array.from(document.getElementsByClassName("answer-text"));
 const progress_bar = document.getElementById("progress-bar");
+const loader = document.getElementById("loader");
+const quiz = document.getElementById("quiz");
 
 /* Load Choices */
 const topic = localStorage.getItem("topic");
@@ -46,10 +48,10 @@ async function play() {
     progress = 0;
 
     api_url = buildAPIRequest();
-    console.log(api_url);
     questions = await getQuestions(api_url);
     setDifficulty();
 
+    removeLoader();
     nextQuestion();
     answerListener();
 }
@@ -104,7 +106,6 @@ function answerListener() {
 function answerRegistration(correct) {
     answered++;
     if (correct) {
-        console.log('correct');
         correctAnswer++;
     } else {
         wrongAnswer++;
@@ -176,7 +177,6 @@ async function getQuestions(api_url) {
     try {
         const data = await fetch(api_url);
         const json = await data.json();
-        console.log(json.response_code); // Remove after testing
         if (json.response_code !== 0) {
             return window.location.assign("/error.html");
         }
@@ -216,8 +216,9 @@ function setTime() {
     if (level == "hard") return 15;
 }
 
-function exitWithError() {
-    // Do something
+function removeLoader() {
+    loader.classList.add("hidden");
+    quiz.classList.remove("hidden");
 }
 
 /* Run Game */
