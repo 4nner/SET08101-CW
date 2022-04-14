@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Includes -->
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/error.css">
+    <link rel="stylesheet" href="style/colours.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Website Info -->
+    <title>QuizzON - Error</title>
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <label class="logo">QuizzON</label>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul class="mobile-menu">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About</a></li>
+            <li><a href="leaderboard.html"><i class="fa-solid fa-trophy"></i> Leaderboad</a></li>
+            <li><a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+            <li><a href="javascript:void(0);" onclick="switchTheme()"><i class="fa fa-moon toggle" id="switch"></i>
+                    Theme</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container flex-column">
+        <div class="error-notice">
+            <h3 class="centered">We're Sorry!</h3>
+            <p class="centered">Something went wrong with your request.<br>This is what happened:<br>
+                <br>
+                - There are not enough questions on the database for the quiz you tried to build.<br>
+                - You've answered all the questions available in the database for the quiz you've just tried to build.<br>
+                <br>
+                <br>
+                We will leave you the choice on how to solve this issue.<br>These are the two possible solutions:<br><br>
+                - Build a quiz with different settings. This will give you a brand new quiz.<br>
+                - Reset your session token. The website will forget what questions has served you, and you will be able to keep playing with the same setting.<br>
+                <br>
+                Please be aware that by choosing to reset your token, you will play again with questions you have already answered to.<br>
+                If after resetting the token you still get redirected to this page, it means that there are not enough questions in that category.
+            </p>
+        </div>
+        <div class="choices">
+            <a href="/index.html" class="button choice">
+                <div id="circle"></div>
+                <span>Build New Quiz</span>
+            </a>
+            <a href="javascript:void(0);" onclick="resetToken()" class="button choice">
+                <div id="circle"></div>
+                <span>Reset Token</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/error.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+
+</html>

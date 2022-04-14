@@ -176,9 +176,9 @@ async function getQuestions(api_url) {
     try {
         const data = await fetch(api_url);
         const json = await data.json();
-        console.log(json.response_code);
-        if (json.response_code == 4) {
-            alert('number');
+        console.log(json.response_code); // Remove after testing
+        if (json.response_code !== 0) {
+            return window.location.assign("/error.html");
         }
         return json.results;
     } catch (err) {
