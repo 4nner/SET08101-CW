@@ -3,13 +3,19 @@ const question = document.getElementById("question");
 const answer = Array.from(document.getElementsByClassName("answer-text"));
 const progress_bar = document.getElementById("progress-bar");
 
+/* Load Choices */
+const topic = localStorage.getItem("topic");
+const number = localStorage.getItem("number");
+const level = localStorage.getItem("difficulty");
+const token = localStorage.getItem("token");
+
 /* Sounds */
 const correctSound = new Audio("sound/right.wav");
 const wrongSound = new Audio("sound/wrong.wav");
 
 /* Game Settings */
-const MAX_TIME = 45; // In seconds - For For testing reason, otherwise based on difficulty
-const MAX_QUESTIONS = 10; // For testing reason, otherwise: localStorage.getItem("number");
+let MAX_TIME = setTime();
+const MAX_QUESTIONS = number;
 
 /* Game Vars */
 let score = 0;
@@ -25,8 +31,6 @@ let answerAllowed = false;
 let difficulty;
 let timer;
 
-
-
 let questions = []; // Contains all questions and answers
 
 /* Game Initialisation */
@@ -41,7 +45,9 @@ async function play() {
     timeElapsed = 0;
     progress = 0;
 
-    questions = await getQuestions("sample.json");
+    api_url = buildAPIRequest();
+    console.log(api_url);
+    questions = await getQuestions(api_url);
     setDifficulty();
 
     nextQuestion();
@@ -170,10 +176,27 @@ async function getQuestions(api_url) {
     try {
         const data = await fetch(api_url);
         const json = await data.json();
+        console.log(json.response_code);
+        if (json.response_code == 4) {
+            alert('number');
+        }
         return json.results;
     } catch (err) {
         console.log(err);
     }
+}
+
+function buildAPIRequest() {
+    const BASE = "https://opentdb.com/api.php?";
+    const AMOUNT = "amount=";
+    const CATEGORY = "&category=";
+    const DIFFICULTY = "&difficulty=";
+    const TYPE = "&type=multiple";
+    const TOKEN = "&token=";
+
+    const request = BASE + AMOUNT + number + CATEGORY + topic + DIFFICULTY + level + TYPE + TOKEN + token;
+
+    return request;
 }
 
 /* Utilities */
@@ -182,11 +205,19 @@ function shuffleArray(arr) {
 }
 
 function setDifficulty() {
-    // let level = localstorage.getItem("difficulty");
-    let level = "easy"; // TODO: Remove before final release
     if (level == "easy") difficulty = 1;
     if (level == "medium") difficulty = 2;
     if (level == "hard") difficulty = 3;
+}
+
+function setTime() {
+    if (level == "easy") return 45;
+    if (level == "medium") return 30;
+    if (level == "hard") return 15;
+}
+
+function exitWithError() {
+    // Do something
 }
 
 /* Run Game */

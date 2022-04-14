@@ -1,13 +1,33 @@
 window.onload = resetChoices();
 
+
 /* HTML Elements */
-const go = document.getElementById("start"); 
+const go = document.getElementById("start");
 
 /* Buttons Elements */
 const topics = ["9", "11", "12", "14", "15", "16", "17", "18", "19", "21", "22", "23", "24", "25", "27", "28"];
 const numbers = ["10", "20", "30", "40"];
 const difficulties = ["easy", "medium", "hard"];
 
+/* API Token */
+let token = localStorage.getItem("token") || "undefined";
+
+async function getToken() {
+    try {
+        const data = await fetch("https://opentdb.com/api_token.php?command=request");
+        const json = await data.json();
+        token = json.token;
+        localStorage.setItem("token", token);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+if (token == "undefined") {
+    getToken();
+}
+
+/* Builder Functions */
 function resetChoices() {
     localStorage.setItem("topic", "undefined");
     localStorage.setItem("number", "undefined");
