@@ -98,3 +98,11 @@ td {
 .input-box {
     text-align: center;
 }
+
+@media (max-width: 500px) {
+
+    .again,
+    .save-score {
+        max-width: 80vw;
+    }
+}
