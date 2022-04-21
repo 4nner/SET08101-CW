@@ -80,7 +80,8 @@ td {
 }
 
 .again,
-.save-score {
+.save-score,
+.share {
     max-width: 45vw;
 }
 
@@ -102,7 +103,30 @@ td {
 @media (max-width: 500px) {
 
     .again,
-    .save-score {
+    .save-score,
+    .share {
         max-width: 80vw;
     }
+}
+
+/* Share Buttons */
+.resp-sharing-button {
+    display: inline-flex;
+    height: 5rem;
+    width: 20rem;
+    margin: 1rem 1rem 1rem 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.resp-sharing-button__icon svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.4em;
+    vertical-align: top
 }

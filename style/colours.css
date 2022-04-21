@@ -24,7 +24,7 @@ nav a:hover {
     background: #1b9bff;
 }
 
-.checkbtn {
+.checkbtn, .resp-sharing-button__link {
     color: #E1E6E1;
 }
 
@@ -95,6 +95,26 @@ nav a:hover {
     color: #CD7F32;
 }
 
+/* Sharing Buttons */
+.resp-sharing-button--twitter {
+    background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+    background-color: #2795e9
+}
+
+.resp-sharing-button--reddit {
+    background-color: #5f99cf
+}
+
+.resp-sharing-button--reddit:hover {
+    background-color: #3a80c1
+}
+
+.resp-sharing-button__icon--solid {
+    fill: #E1E6E1;
+}
 
 /* Dark Theme */
 body.dark-theme {
