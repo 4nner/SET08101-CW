@@ -91,9 +91,10 @@ h4 {
     border-right: 4px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-  }
-  .loader::after {
-    content: '';  
+}
+
+.loader::after {
+    content: '';
     box-sizing: border-box;
     position: absolute;
     left: 0;
@@ -104,12 +105,14 @@ h4 {
     border-left: 4px solid #FF3D00;
     border-bottom: 4px solid transparent;
     animation: rotation 0.5s linear infinite reverse;
-  }
-  @keyframes rotation {
+}
+
+@keyframes rotation {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  } 
+}

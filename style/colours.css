@@ -24,7 +24,8 @@ nav a:hover {
     background: #1b9bff;
 }
 
-.checkbtn, .resp-sharing-button__link {
+.checkbtn,
+.resp-sharing-button__link {
     color: #E1E6E1;
 }
 

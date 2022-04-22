@@ -4,16 +4,16 @@ const themeSwitch = document.getElementById("switch");
 // Execute on Page Load
 window.onload = onLoad();
 
-function onLoad(){
+function onLoad() {
     var currentTheme = localStorage.getItem("theme");
     if (currentTheme === null) {
-        if(prefersDark.matches) {
+        if (prefersDark.matches) {
             setDark();
         } else {
             setLight();
         }
     } else {
-        if(currentTheme == "dark") {
+        if (currentTheme == "dark") {
             setDark();
         } else {
             setLight();
@@ -27,7 +27,7 @@ function switchTheme() {
         setLight();
     } else {
         setDark();
-    }    
+    }
 }
 
 function setDark() {
