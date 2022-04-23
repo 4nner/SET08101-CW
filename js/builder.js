@@ -1,5 +1,4 @@
-window.onload = resetChoices();
-
+window.onload = resetChoices(); // Reset Choices on (re)load
 
 /* HTML Elements */
 const go = document.getElementById("start");

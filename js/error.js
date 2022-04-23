@@ -1,3 +1,5 @@
+/* Token Reset
+   Issues new Token */
 async function resetToken() {
     try {
         const data = await fetch("https://opentdb.com/api_token.php?command=request");

@@ -1,8 +1,8 @@
+/* HTML Elements + Understand OS Setting */
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 const themeSwitch = document.getElementById("switch");
 
-// Execute on Page Load
-window.onload = onLoad();
+window.onload = onLoad(); // Set Colour Mode on (re)load
 
 function onLoad() {
     var currentTheme = localStorage.getItem("theme");
@@ -21,6 +21,7 @@ function onLoad() {
     }
 }
 
+/* Switch Functions */
 function switchTheme() {
     currentTheme = localStorage.getItem("theme");
     if (currentTheme == "dark") {

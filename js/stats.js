@@ -27,17 +27,18 @@ let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 /* Save Score */
 function saveScore() {
     if (username.value === "") {
+        /* Show Error - Username cannot be empty */
         username.classList.add("incomplete");
         setTimeout(function () {
             username.classList.remove("incomplete");
         }, 2000); // Wait 2 seconds
     } else {
+        /* Save Score */
         let tmpObj = { name: username.value, score: localStorage.getItem("score") }
 
         leaderboard.push(tmpObj); // Adds new score
         leaderboard.sort((a, b) => parseInt(b.score) - parseInt(a.score)); // Sorts Array
         leaderboard.splice(3); // Keeps only top 3
-
         localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
         return window.location.assign("/leaderboard.html");
     }

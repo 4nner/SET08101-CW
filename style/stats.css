@@ -3,7 +3,6 @@ h3 {
     margin: 2rem;
 }
 
-
 /* Table Styles */
 /* Adapted from: https://codepen.io/alassetter/pen/nBEVJx */
 
@@ -124,7 +123,7 @@ td {
     overflow: hidden;
 }
 
-.resp-sharing-button__icon svg {
+.resp-sharing-button__icon i {
     width: 1em;
     height: 1em;
     margin-right: 0.4em;

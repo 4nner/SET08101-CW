@@ -1,7 +1,9 @@
+/* Typography */
 p {
     font-size: 2rem;
 }
 
+/* Error Notice */
 .error-notice {
     margin: 3rem;
 }

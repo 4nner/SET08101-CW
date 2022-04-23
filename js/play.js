@@ -32,12 +32,11 @@ let progress = 0;
 let answerAllowed = false;
 let difficulty;
 let timer;
-
 let questions = []; // Contains all questions and answers
 
 /* Game Initialisation */
 async function play() {
-    /* Set all the variables to 0 */
+    /* Reset Vars */
     score = 0;
     answered = 0;
     wrongAnswer = 0;
@@ -47,10 +46,10 @@ async function play() {
     timeElapsed = 0;
     progress = 0;
 
-    api_url = buildAPIRequest();
-    questions = await getQuestions(api_url);
-    setDifficulty();
+    api_url = buildAPIRequest(); // Build API URL
+    questions = await getQuestions(api_url); // Fetches API
 
+    setDifficulty();
     removeLoader();
     nextQuestion();
     answerListener();
@@ -61,9 +60,11 @@ function nextQuestion() {
     updateProgress();
     clearInterval(timer);
     if (questCount < MAX_QUESTIONS) {
+        /* Loads next Question */
         timeLeft = MAX_TIME;
         loadQuestion();
     } else {
+        /* Quiz Ends - Show Statistics */
         localStorage.setItem("score", score);
         localStorage.setItem("total", questCount);
         localStorage.setItem("answered", answered);
@@ -75,7 +76,7 @@ function nextQuestion() {
     }
 }
 
-/* Set-up Answer Listener*/
+/* Set-up Answer Listener */
 function answerListener() {
     answer.forEach((pick) => {
         pick.addEventListener('click', e => {
@@ -94,6 +95,7 @@ function answerListener() {
                 e.target.parentElement.classList.add(result);
                 wrongSound.play();
             }
+
             setTimeout(function () {
                 e.target.parentElement.classList.remove(result);
                 nextQuestion();
@@ -124,17 +126,17 @@ function loadQuestion() {
         answers.push(data.incorrect_answers[loop]);
     }
 
-    shuffleArray(answers);
+    shuffleArray(answers); // Shuffles answers
 
     for (let loop = 0; loop < 4; loop++) {
         answer[loop].innerHTML = answers[loop];
     }
 
     questCount++;
-    answerAllowed = true;
 
-    /* (Re)Start Timer */
+    /* (Re)Start Timer - Accept Answers */
     timer = setInterval(questionTimer, 1000);
+    answerAllowed = true;
 }
 
 /* Timer - Score - Progress */
