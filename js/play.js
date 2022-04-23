@@ -72,7 +72,7 @@ function nextQuestion() {
         localStorage.setItem("correct", correctAnswer);
         localStorage.setItem("incorrect", wrongAnswer);
         localStorage.setItem("time", timeElapsed);
-        return window.location.assign("/stats.html");
+        return window.location.assign("stats.html");
     }
 }
 

@@ -40,7 +40,7 @@ function saveScore() {
         leaderboard.sort((a, b) => parseInt(b.score) - parseInt(a.score)); // Sorts Array
         leaderboard.splice(3); // Keeps only top 3
         localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
-        return window.location.assign("/leaderboard.html");
+        return window.location.assign("leaderboard.html");
     }
 }
 

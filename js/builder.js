@@ -92,6 +92,6 @@ function build() {
             go.classList.remove("incomplete");
         }, 2000); // Wait 2 seconds
     } else {
-        return window.location.assign("/play.html");
+        return window.location.assign("play.html");
     }
 }

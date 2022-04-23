@@ -9,5 +9,5 @@ async function resetToken() {
     } catch (err) {
         console.log(err);
     }
-    return window.location.assign("/index.html");
+    return window.location.assign("index.html");
 }
