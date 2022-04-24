@@ -180,7 +180,7 @@ async function getQuestions(api_url) {
         const data = await fetch(api_url);
         const json = await data.json();
         if (json.response_code !== 0) {
-            return window.location.assign("/error.html");
+            return window.location.assign("error.html");
         }
         return json.results;
     } catch (err) {
